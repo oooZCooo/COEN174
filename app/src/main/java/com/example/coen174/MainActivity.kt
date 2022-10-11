@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val lat = getBuildingLocation(building)[0]
         val long = getBuildingLocation(building)[1]
 
-        val gmmIntentUri = Uri.parse("geo:$lat,$long")
+        val gmmIntentUri = Uri.parse("google.navigation:q=$lat,$long")
         val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
         mapIntent.setPackage("com.google.android.apps.maps")
         startActivity(mapIntent)
